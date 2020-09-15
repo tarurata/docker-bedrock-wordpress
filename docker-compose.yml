@@ -8,15 +8,18 @@ services:
       - ./mysqldata:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ExampleRootPass
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress1
       MYSQL_USER: wpdbuser
       MYSQL_PASSWORD: wpdbuserpass
 
   apache1:
+    build: 
+      context: ./php
+      dockerfile: dockerfile
     depends_on:
       - db
-    image: 1stclass/docker-apache24-php7
+    #image: 1stclass/docker-apache24-php7
     container_name: local_web1
     ports:
       - "10080:80"
@@ -29,6 +32,7 @@ services:
       WORDPRESS_DB_USER: wpdbuser
       WORDPRESS_DB_PASSWORD: wpdbuserpass
     volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini
       - type: bind
         source: ./bedrock
         target: /var/www

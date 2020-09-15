@@ -44,8 +44,8 @@
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/duplicate-post": "*",
 
-    "wpackagist-theme/astra":"*",
-    "wpackagist-theme/online-shop":"*"
+    "wpackagist-theme/online-shop":"*",
+    "wpackagist-theme/astra": "^2.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2"
