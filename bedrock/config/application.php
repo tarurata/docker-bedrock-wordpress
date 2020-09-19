@@ -15,6 +15,7 @@ echo getenv('WP_ENV');
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $dotenv = new Dotenv\Dotenv($root_dir);
+$test = $root_dir . '/.env.'.$_SERVER['HTTP_HOST'];
 if (file_exists($root_dir . '/.env.'.$_SERVER['HTTP_HOST'])) {
     $dotenv = new Dotenv\Dotenv($root_dir, '.env.'.$_SERVER['HTTP_HOST']);
     $dotenv->load();
@@ -115,4 +116,5 @@ else{
     }
 }
 define('FS_METHOD', "direct");
-define('UPLOADS', '../app/uploads/'.$_SERVER['HTTP_HOST'] );
+#define('UPLOADS', '../app/uploads/'.$_SERVER['HTTP_HOST'] );
+define('UPLOADS', '/app/uploads/' );
