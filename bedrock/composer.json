@@ -43,6 +43,7 @@
     "wpackagist-plugin/disable-author-pages": "*",
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/duplicate-post": "*",
+    "wpackagist-plugin/classic-editor": "*",
 
     "wpackagist-theme/online-shop":"*",
     "wpackagist-theme/astra": "^2.5"

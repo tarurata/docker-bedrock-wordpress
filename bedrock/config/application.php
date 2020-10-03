@@ -87,11 +87,11 @@ if (!defined('ABSPATH')) {
 $matches = [];
 $dbname = getenv('DB_NAME');
 if( preg_match('/([a-z]+)\.[a-z]+$/', $_SERVER['HTTP_HOST'], $matches)) {
-    $dbname = $maches[1];
+    $dbname = $matches[1];
 }
 
 if( preg_match('/(cn|en|ja|kr|fr)\.'.$dbname.'\.[a-z]+$/', $_SERVER['HTTP_HOST'], $matches)) {
-    $dbname = $maches[1]."_".$dbname;
+    $dbname = $matches[1]."_".$dbname;
     putenv('DB_NAME='.$dbname);
 }
 
