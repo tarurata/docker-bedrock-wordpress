@@ -12,6 +12,8 @@ services:
       MYSQL_DATABASE: wordpress1
       MYSQL_USER: wpdbuser
       MYSQL_PASSWORD: wpdbuserpass
+    ports:
+      - "4306:3306"
 
   apache1:
     build: 
